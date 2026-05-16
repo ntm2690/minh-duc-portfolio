@@ -1,0 +1,99 @@
+.starry-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* Star generation using box-shadow */
+.stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 1744px 141px #FFF, 1530px 1863px #FFF, 1146px 661px #FFF, 345px 1279px #FFF, 245px 443px #FFF, 1373px 1860px #FFF, 1729px 1221px #FFF, 1183px 1976px #FFF, 1730px 731px #FFF, 764px 260px #FFF, 1134px 1756px #FFF, 1073px 1217px #FFF, 163px 1655px #FFF, 1132px 1459px #FFF, 252px 632px #FFF, 1500px 100px #FFF;
+  animation: animStar 50s linear infinite;
+}
+
+.stars:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 1744px 141px #FFF, 1530px 1863px #FFF, 1146px 661px #FFF, 345px 1279px #FFF, 245px 443px #FFF, 1373px 1860px #FFF, 1729px 1221px #FFF, 1183px 1976px #FFF, 1730px 731px #FFF, 764px 260px #FFF, 1134px 1756px #FFF, 1073px 1217px #FFF, 163px 1655px #FFF, 1132px 1459px #FFF, 252px 632px #FFF, 1500px 100px #FFF;
+}
+
+.stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 104px 582px #FFF, 625px 164px #FFF, 1432px 122px #FFF, 1682px 456px #FFF, 234px 1234px #FFF, 890px 1567px #FFF;
+  animation: animStar 100s linear infinite;
+}
+
+.stars2:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 104px 582px #FFF, 625px 164px #FFF, 1432px 122px #FFF, 1682px 456px #FFF, 234px 1234px #FFF, 890px 1567px #FFF;
+}
+
+.stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: 400px 600px #FFF, 800px 200px #FFF, 1200px 800px #FFF, 1600px 400px #FFF;
+  animation: animStar 150s linear infinite;
+}
+
+.stars3:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: 400px 600px #FFF, 800px 200px #FFF, 1200px 800px #FFF, 1600px 400px #FFF;
+}
+
+.nebula, .nebula2 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+  z-index: -1;
+}
+
+.nebula {
+  background: #7C3AED;
+  top: -100px;
+  left: -100px;
+  animation: nebulaMove 20s ease-in-out infinite alternate;
+}
+
+.nebula2 {
+  background: #00E5FF;
+  bottom: -100px;
+  right: -100px;
+  animation: nebulaMove 25s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes animStar {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-2000px); }
+}
+
+@keyframes nebulaMove {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(100px, 50px) scale(1.2); }
+}

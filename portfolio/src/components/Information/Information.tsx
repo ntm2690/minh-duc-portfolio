@@ -8,13 +8,15 @@ import { motion } from "framer-motion";
 import projects from "../../constants/projects";
 
 import type { Project } from "../../types/project";
-import ProjectCard from "../ProjectCard/ProjectCard";
+import ProjectSlider from "../ProjectSlider/ProjectSlider";
+import WorkHighlight from "../WorkHighlight/WorkHighlight";
 
 interface InformationProps {
   onProjectClick: (project: Project) => void;
 }
 
 const Information = ({ onProjectClick }: InformationProps) => {
+  const placeholderImages = [avatar, avatar, avatar, avatar];
   return (
     <div className="information-wrapper">
       <motion.div
@@ -30,26 +32,34 @@ const Information = ({ onProjectClick }: InformationProps) => {
         <div className="hero-content">
           <h1>Minh Duc</h1>
 
-          <h2>Video Editor</h2>
+          <h2>Professional Video Editor</h2>
 
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            Specializing in high-impact storytelling through video. Experienced
+            in creative post-production, short-form social content, and
+            enterprise video solutions. Bringing ideas to life with precision
+            and rhythm.
           </p>
 
           <div className="contact">
-            <span>Email: yourmail@gmail.com</span>
-            <span>Phone: 0123456789</span>
+            <span>Email: minhduc.editor@gmail.com</span>
+            <span>Phone: 0123 456 789</span>
           </div>
         </div>
       </motion.div>
+
+      <WorkHighlight
+        title="Short Video"
+        description="Captivating short-form content tailored for TikTok, Reels, and Shorts. Optimized for high engagement, trending rhythms, and visual storytelling that hooks viewers in the first seconds."
+        images={placeholderImages}
+      />
+
+      <WorkHighlight
+        title="Post Production"
+        description="Comprehensive video post-production including color grading, sound design, and advanced visual effects. Transforming raw footage into polished, professional masterpieces."
+        images={placeholderImages}
+        reverse={true}
+      />
 
       <motion.div
         className="experience-section"
@@ -60,30 +70,16 @@ const Information = ({ onProjectClick }: InformationProps) => {
         <h2>Experience</h2>
 
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
+          5+ years in the creative industry, working with top brands and
+          creators to deliver visually stunning content. Expert in Adobe
+          Premiere Pro, After Effects, and Davinci Resolve.
         </p>
       </motion.div>
 
       <div className="project-section">
         <h2>Projects</h2>
 
-        <div className="project-grid">
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              onClick={onProjectClick}
-            />
-          ))}
-        </div>
+        <ProjectSlider projects={projects} onProjectClick={onProjectClick} />
       </div>
     </div>
   );

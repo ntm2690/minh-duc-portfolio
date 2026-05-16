@@ -1,0 +1,138 @@
+.highlight-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-top: 150px;
+  width: 100%;
+}
+
+.highlight-container.reverse {
+  flex-direction: row-reverse;
+}
+
+.highlight-info {
+  flex: 1;
+  text-align: left;
+  max-width: 450px;
+}
+
+.highlight-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-h);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+  margin-bottom: 32px;
+}
+
+.highlight-desc {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 32px;
+}
+
+.highlight-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.highlight-tags span {
+  padding: 6px 16px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.highlight-gallery {
+  flex: 1.2;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 16px;
+}
+
+.gallery-item {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.item-1 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.item-2 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.item-3 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.item-4 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+@media (max-width: 1024px) {
+  .highlight-container {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .highlight-info {
+    max-width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .highlight-title {
+    font-size: 36px;
+  }
+
+  .gallery-grid {
+    grid-template-rows: repeat(2, 150px);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 120px);
+  }
+
+  .item-1, .item-2, .item-3, .item-4 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}

@@ -1,0 +1,128 @@
+.slider-container {
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  overflow: hidden;
+}
+
+.slider-controls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.slider-view {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active-slide-container {
+  z-index: 10;
+  width: 400px;
+}
+
+.card-wrapper {
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.main-card {
+  transform: scale(1.1);
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+}
+
+.side-cards {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.prev-card, .next-card {
+  width: 320px;
+  opacity: 0.4;
+  filter: blur(2px);
+  transform: scale(0.8);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.prev-card:hover, .next-card:hover {
+  opacity: 0.6;
+}
+
+.control-btn {
+  background: var(--social-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.control-btn:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  transform: scale(1.1);
+}
+
+.pagination {
+  display: flex;
+  gap: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background: var(--accent);
+}
+
+@media (max-width: 1024px) {
+  .slider-view {
+    height: 450px;
+  }
+  .active-slide-container {
+    width: 350px;
+  }
+  .prev-card, .next-card {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-view {
+    height: 400px;
+  }
+  .active-slide-container {
+    width: 280px;
+  }
+  .control-btn {
+    width: 40px;
+    height: 40px;
+  }
+}

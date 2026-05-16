@@ -1,12 +1,18 @@
 import "./ProjectDetail.css";
 import avatar from "../../assets/hero.png";
 import { motion } from "framer-motion";
+import type { Project } from "../../types/project";
 
-const ProjectDetail = ({ project, onBack }) => {
+interface ProjectDetailProps {
+  project: Project;
+  onBack: () => void;
+}
+
+const ProjectDetail = ({ project, onBack }: ProjectDetailProps) => {
   if (!project) return null;
 
   return (
-    <motion.div 
+    <motion.div
       className="project-detail-wrapper"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -14,7 +20,11 @@ const ProjectDetail = ({ project, onBack }) => {
     >
       <header className="detail-header">
         <div className="header-content">
-          <div className="back-avatar" onClick={onBack} title="Quay lại trang chính">
+          <div
+            className="back-avatar"
+            onClick={onBack}
+            title="Quay lại trang chính"
+          >
             <img src={avatar} alt="Back to home" />
           </div>
           <div className="header-title">
@@ -24,22 +34,28 @@ const ProjectDetail = ({ project, onBack }) => {
       </header>
 
       <div className="detail-body">
-        <motion.div 
+        <motion.div
           className="detail-content"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
           <div className="detail-image-container">
-            <img src={project.image} alt={project.title} className="detail-image" />
+            <img
+              src={project.image}
+              alt={project.title}
+              className="detail-image"
+            />
           </div>
-          
+
           <div className="detail-info">
             <h1>{project.title}</h1>
-            
+
             <div className="tech-tags">
               {project.tech.map((tech) => (
-                <span key={tech} className="tech-tag">{tech}</span>
+                <span key={tech} className="tech-tag">
+                  {tech}
+                </span>
               ))}
             </div>
 

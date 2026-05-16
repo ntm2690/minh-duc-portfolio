@@ -1,9 +1,15 @@
-// src/components/ProjectCard/ProjectCard.jsx
+// src/components/ProjectCard/ProjectCard.tsx
 
 import "./ProjectCard.css";
 import { motion } from "framer-motion";
+import type { Project } from "../../types/project";
 
-const ProjectCard = ({ project, onClick }) => {
+interface ProjectCardProps {
+  project: Project;
+  onClick: (project: Project) => void;
+}
+
+const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
   return (
     <motion.div
       className="project-card"

@@ -2,8 +2,14 @@
 
 import "./ProjectModal.css";
 import { motion, AnimatePresence } from "framer-motion";
+import type { Project } from "../../types/project";
 
-const ProjectModal = ({ project, onClose }) => {
+interface IProject {
+  project: Project | null;
+  onClose: () => void;
+}
+
+const ProjectModal = ({ project, onClose }: IProject) => {
   return (
     <AnimatePresence>
       {project && (

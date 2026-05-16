@@ -7,9 +7,14 @@ import { motion } from "framer-motion";
 
 import projects from "../../constants/projects";
 
+import type { Project } from "../../types/project";
 import ProjectCard from "../ProjectCard/ProjectCard";
 
-const Information = ({ onProjectClick }) => {
+interface InformationProps {
+  onProjectClick: (project: Project) => void;
+}
+
+const Information = ({ onProjectClick }: InformationProps) => {
   return (
     <div className="information-wrapper">
       <motion.div

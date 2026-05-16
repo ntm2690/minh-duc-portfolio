@@ -1,4 +1,4 @@
-// src/constants/colors.js
+// src/constants/colors.ts
 
 const colors = {
     background: "#070B14",
